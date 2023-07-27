@@ -70,6 +70,10 @@ import { ref, computed, watch } from 'vue'
 export default {
   name: 'vas-menu',
   props: {
+    maximizedMenuWidth:{
+      type: String,
+      default: '250px'
+    },
     menu: {
       type: Array,
       required: true
@@ -306,7 +310,7 @@ export default {
       }
     )
     const sidebarMenuWidth = computed(() => {
-      return miniMenuRef.value ? props.widthMiniMenu : props.width
+      return miniMenuRef.value ? props.widthMiniMenu : props.maximizedMenuWidth
     })
 
     const sidebarClass = computed(() => {
